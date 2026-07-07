@@ -1,5 +1,0 @@
-# Hashes of file build rules.
-aabde117da4eea1c257d9159b4fc83d9 zero/rpc/proto/common.pb.cc
-6d3d0d917e3160f73131aaa6c572597d zero/rpc/proto/kv_node.pb.cc
-95fab50dbe4332d0dc355370f795b8a4 zero/rpc/proto/rpc.pb.cc
-297deb18ba6cb503af81de0b552bec74 zero/rpc/proto/sentinel.pb.cc
