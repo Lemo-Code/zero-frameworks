@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package zero.rpc;
+
+import "zero/rpc/proto/kv_node.proto";
+import "zero/rpc/proto/sentinel.proto";
+
+// RPC framing envelope — all calls use this wrapper.
+// Wire format: 4-byte big-endian length prefix + serialized RpcEnvelope.
+
+message RpcEnvelope {
+  uint64 request_id = 1;
+
+  oneof body {
+    // KvNodeService
+    HealthCheckRequest    health_check_req     = 10;
+    HealthCheckResponse   health_check_resp    = 11;
+    ReplicaOfRequest      replica_of_req       = 12;
+    ReplicaOfResponse     replica_of_resp      = 13;
+    GetNodeStatusRequest  get_node_status_req  = 14;
+    GetNodeStatusResponse get_node_status_resp = 15;
+
+    // SentinelService
+    VoteRequest        request_vote_req      = 20;
+    VoteResponse       request_vote_resp     = 21;
+    HeartbeatRequest   heartbeat_req         = 22;
+    HeartbeatResponse  heartbeat_resp        = 23;
+    GetMasterRequest   get_master_req        = 24;
+    GetMasterResponse  get_master_resp       = 25;
+    WatchMasterRequest watch_master_req      = 26;
+    MasterChangeEvent  master_change_event   = 27;
+  }
+}

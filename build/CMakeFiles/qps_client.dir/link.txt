@@ -1,0 +1,1 @@
+/usr/bin/c++  -rdynamic -O2 -fPIC -ggdb -Wall -Wno-deprecated -Wno-unused-function -Wno-deprecated-declarations -Wno-builtin-macro-redefined -faligned-new CMakeFiles/qps_client.dir/examples/qps_client.cc.o -o /home/wangmaosen/project/kv/bac/bin/qps_client 

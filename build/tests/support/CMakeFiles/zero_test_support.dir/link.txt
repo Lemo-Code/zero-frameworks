@@ -1,0 +1,2 @@
+/usr/bin/ar qc libzero_test_support.a CMakeFiles/zero_test_support.dir/src/fixtures.cc.o CMakeFiles/zero_test_support.dir/src/service_helpers.cc.o
+/usr/bin/ranlib libzero_test_support.a

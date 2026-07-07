@@ -1,0 +1,1 @@
+/usr/bin/c++  -rdynamic -O2 -fPIC -ggdb -Wall -Wno-deprecated -Wno-unused-function -Wno-deprecated-declarations -Wno-builtin-macro-redefined -faligned-new CMakeFiles/ws_echo_client.dir/bench2/ws_echo_client.cc.o -o /home/wangmaosen/project/kv/bac/bin/ws_echo_client 

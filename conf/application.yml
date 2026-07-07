@@ -1,0 +1,50 @@
+app:
+  name: zero-application
+  version: 1.0.0
+  pid_file: ""
+  daemon: 0
+  workers: 4
+  hook_enable: 1
+  config_path: conf
+
+servers:
+  http:
+    enabled: 1
+    address:
+      - "0.0.0.0:8080"
+    keepalive: 1
+    timeout: 120000
+    name: http-server
+    ssl: 0
+    cert_file: ""
+    key_file: ""
+
+  kv:
+    enabled: 0
+    address:
+      - "0.0.0.0:6379"
+    timeout: 120000
+    name: kv-server
+    rdb_path: "./dump.rdb"
+    aof_path: "./appendonly.aof"
+    aof_enabled: 0
+    autosave_sec: 60
+    http_admin_port: 0
+    rpc_port: 0
+
+  rpc:
+    enabled: 0
+    address:
+      - "0.0.0.0:9090"
+    timeout: 120000
+    name: rpc-server
+
+  ws:
+    enabled: 0
+    address:
+      - "0.0.0.0:8081"
+    timeout: 120000
+    name: ws-server
+
+shutdown:
+  timeout: 30000

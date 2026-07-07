@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package zero.rpc;
+
+import "zero/rpc/proto/common.proto";
+
+// SentinelService — sentinel-to-sentinel consensus protocol
+
+message VoteRequest {
+  uint64 term = 1;
+  string candidate_id = 2;
+}
+
+message VoteResponse {
+  uint64 term = 1;
+  bool vote_granted = 2;
+}
+
+message HeartbeatRequest {
+  uint64 term = 1;
+  string leader_id = 2;
+  Endpoint current_master = 3;
+}
+
+message HeartbeatResponse {
+  uint64 term = 1;
+  bool success = 2;
+}
+
+message GetMasterRequest {
+  string monitor_group = 1;
+}
+
+message GetMasterResponse {
+  bool found = 1;
+  Endpoint master = 2;
+  uint64 term = 3;
+}
+
+message WatchMasterRequest {
+  string monitor_group = 1;
+}
+
+message MasterChangeEvent {
+  Endpoint new_master = 1;
+  Endpoint old_master = 2;
+  uint64 term = 3;
+  string reason = 4;
+}
+
+service SentinelService {
+  rpc RequestVote(VoteRequest) returns (VoteResponse);
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse);
+  rpc GetMaster(GetMasterRequest) returns (GetMasterResponse);
+  rpc WatchMaster(WatchMasterRequest) returns (stream MasterChangeEvent);
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package zero.rpc;
+
+enum NodeRole {
+  MASTER = 0;
+  REPLICA = 1;
+  SENTINEL = 2;
+}
+
+message NodeInfo {
+  string node_id = 1;
+  string host = 2;
+  int32 port = 3;
+  NodeRole role = 4;
+  string replication_id = 5;
+  int64 replication_offset = 6;
+  int64 epoch_ms = 7;
+}
+
+message Endpoint {
+  string host = 1;
+  int32 port = 2;
+}
