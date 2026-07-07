@@ -383,7 +383,6 @@ bool IOManager::cancelEvent(int fd, Event event) {
         return false;
     }
 
-    fd_ctx->events = new_events;
     FdContext::EventContext& event_ctx = fd_ctx->getContext(event);
     uint64_t expire_at = event_ctx.expire_at;
     event_ctx.expire_at = 0;

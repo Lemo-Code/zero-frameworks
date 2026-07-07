@@ -262,9 +262,9 @@ add_executable(ws_qps_client examples/ws_qps_client.cc)
 set_target_properties(ws_qps_client PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
 # ---- main/ - Spring Boot 风格最终版服务入口 ----
-zero_add_executable(zero_app "main/zero_app.cc" zero "${LIBS}")
-zero_add_executable(http_server "main/http_server.cc" zero "${LIBS}")
-zero_add_executable(kv_main "main/kv_server.cc" zero "${LIBS}")
+# zero_add_executable(zero_app "main/zero_app.cc" zero "${LIBS}")
+# zero_add_executable(http_server "main/http_server.cc" zero "${LIBS}")
+# zero_add_executable(kv_main "main/kv_server.cc" zero "${LIBS}")
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
